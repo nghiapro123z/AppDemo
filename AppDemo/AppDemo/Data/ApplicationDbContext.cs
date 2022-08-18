@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using AppDemo.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,130 @@ namespace AppDemo.Data
             : base(options)
         {
         }
+
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Book> Book { get; set; }
+        public DbSet<Author> Author { get; set; }
+
+        public DbSet<Order> Order { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            SeedCategory(builder);
+            SeedBook(builder);
+            SeedAuthor(builder);
+        }
+        private void SeedCategory(ModelBuilder builder)
+        {
+            builder.Entity<Category>().HasData(
+                new Category { Id = 1, Name = "History" },
+                new Category { Id = 2, Name = "Entertainment" },
+                new Category { Id = 3, Name = "Comics" }
+                );
+        }
+        private void SeedBook(ModelBuilder builder)
+        {
+            builder.Entity<Book>().HasData(
+                new Book
+                {
+                    Id = 1,
+                    Name = "The War of Jenkins' Ear",
+                    Price = 42.59,
+                    Quantity = 50,
+                    CategoryId = 1,
+                    AuthorId = 1,
+                    Image = "https://img.thriftbooks.com/api/images/i/l/A8355E53B30072A52D98408A600E40C47BF77518.jpg"
+                },
+                new Book
+                {
+                    Id = 2,
+                    Name = "African Kaiser: General Paul Von Lettow-Vorbeck and the Great War in Africa, 1914-1918",
+                    Price = 28.69,
+                    Quantity = 30,
+                    CategoryId = 1,
+                    AuthorId = 1,
+                    Image = "https://img.thriftbooks.com/api/images/m/1b3c2d90b93acea06d9807e06ad6ff03a47a1076.jpg"
+                },
+                new Book
+                {
+                    Id = 3,
+                    Name = "Diary of a Wimpy Kid",
+
+                    Price = 13.99,
+                    Quantity = 20,
+                    CategoryId = 2,
+                    AuthorId = 2,
+                    Image = "https://img.thriftbooks.com/api/images/m/81690cdfa2eaab727c29d81b308efba1dec70a55.jpg"
+                },
+                new Book
+                {
+                    Id = 4,
+                    Name = "The Last Straw",
+
+                    Price = 22.99,
+                    Quantity = 50,
+                    CategoryId = 2,
+                    AuthorId = 2,
+                    Image = "https://img.thriftbooks.com/api/images/m/a38190325523b980a79a9388e76fd5da6e397f34.jpg"
+                },
+                new Book
+                {
+                    Id = 5,
+                    Name = "Diary of a wimpy kid. rodrick rules",
+
+                    Price = 13.99,
+                    Quantity = 40,
+                    CategoryId = 2,
+                    AuthorId = 2,
+                    Image = "https://img.thriftbooks.com/api/images/i/m/A41687F6F3D81F875262446FEFE9383C61A2A6C8.jpg"
+                },
+                new Book
+                {
+                    Id = 6,
+                    Name = "Naruto, Vol. 3",
+
+                    Price = 9.99,
+                    Quantity = 20,
+                    CategoryId = 3,
+                    AuthorId = 3,
+                    Image = "https://img.thriftbooks.com/api/images/m/456fbecc05164ed1e327ff5ee9922475d1e38df0.jpg"
+                },
+                new Book
+                {
+                    Id = 7,
+                    Name = "Naruto, Vol. 2",
+
+                    Price = 9.99,
+                    Quantity = 10,
+                    CategoryId = 3,
+                    AuthorId = 3,
+                    Image = "https://img.thriftbooks.com/api/images/m/1414da15882c6e496e490103cbfb8b5948be77f7.jpg"
+                },
+                new Book
+                {
+                    Id = 8,
+                    Name = "Naruto, Vol. 1",
+
+                    Price = 9.99,
+                    Quantity = 30,
+                    CategoryId = 3,
+                    AuthorId = 3,
+                    Image = "https://img.thriftbooks.com/api/images/m/5733979f44f82d7347b8d7718f996747462fe029.jpg"
+                }
+                );                  
+            //throw new NotImplementedException();
+        }
+
+        private void SeedAuthor(ModelBuilder builder)
+        {
+            builder.Entity<Author>().HasData(
+                new Author { Id = 1, Name = "Robert Gaudi" },
+                new Author { Id = 2, Name = "Jeff Kinney" },
+                new Author { Id = 3, Name = "Masashi Kishimoto" }
+             );
+            // throw new NotImplementedException();
+        }
+
     }
 }
