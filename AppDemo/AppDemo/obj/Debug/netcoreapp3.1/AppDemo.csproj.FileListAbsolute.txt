@@ -387,3 +387,4 @@ D:\HocData\App develop\AppDemo\AppDemo\AppDemo\AppDemo\obj\Debug\netcoreapp3.1\A
 D:\HocData\App develop\AppDemo\AppDemo\AppDemo\AppDemo\obj\Debug\netcoreapp3.1\AppDemo.pdb
 D:\HocData\App develop\AppDemo\AppDemo\AppDemo\AppDemo\obj\Debug\netcoreapp3.1\AppDemo.genruntimeconfig.cache
 D:\HocData\App develop\AppDemo\AppDemo\AppDemo\AppDemo\obj\Debug\netcoreapp3.1\Razor\Views\Book\Index.cshtml.g.cs
+D:\HocData\App develop\AppDemo\AppDemo\AppDemo\AppDemo\obj\Debug\netcoreapp3.1\Razor\Views\Book\Store.cshtml.g.cs
