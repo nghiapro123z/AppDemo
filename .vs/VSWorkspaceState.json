@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AppDemo",
+    "\\AppDemo\\AppDemo",
+    "\\AppDemo\\AppDemo\\Models"
   ],
+  "SelectedNode": "\\AppDemo\\AppDemo.sln",
   "PreviewInSolutionExplorer": false
 }
