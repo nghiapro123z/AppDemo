@@ -14,6 +14,6 @@ namespace AppDemo.Models
         [MinLength(1)]
         public string Name { get; set; }
 
-        public ICollection<Book> Books { get; set; }
+        public ICollection<Book> Book { get; set; }
     }
 }

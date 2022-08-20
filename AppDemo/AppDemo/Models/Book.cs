@@ -26,11 +26,13 @@ namespace AppDemo.Models
         public string Image { get; set; }
 
         public Category Category { get; set; }
-        
+
+        public Author Author { get; set; }
+
         [Required]
         [Display(Name = "Author name:")]
         public int AuthorId { get; set; }
-        public Author Author { get; set; }
+
 
         [Required]
         [Display(Name = "Category name: ")]

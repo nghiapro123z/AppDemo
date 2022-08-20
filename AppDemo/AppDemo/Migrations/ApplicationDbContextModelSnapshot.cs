@@ -258,6 +258,22 @@ namespace AppDemo.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            ConcurrencyStamp = "1877a38b-3262-46b7-bffd-2467b4dca85f",
+                            Name = "Admin",
+                            NormalizedName = "Admin"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            ConcurrencyStamp = "0a2e39ec-5ef4-4b44-bb78-06defe0d9050",
+                            Name = "Customer",
+                            NormalizedName = "Customer"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -347,6 +363,38 @@ namespace AppDemo.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "7c0a6f48-ec8a-4009-be27-6e95f78b7e2d",
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "admin@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAENQ0D6odRCs6nEM6UdFLumhYaqNmwf5n7PdQRR62fKpSOLY8F5XIiBlMuABRajT0SA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "706507ac-c88c-4f98-a27a-c56da2c8469d",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "24fce0f6-23dd-484b-a279-23cfad5b6505",
+                            Email = "customer@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "customer@gmail.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAECvXUqWWiyqOH1epBWEqJgGodUb/oYxFOS0srz+nnENx+AepTs7GhBdy9QAe7mHjsw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "b7cdd203-eb9d-419b-92fc-8350a521e868",
+                            TwoFactorEnabled = false,
+                            UserName = "customer@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -410,6 +458,18 @@ namespace AppDemo.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "1",
+                            RoleId = "1"
+                        },
+                        new
+                        {
+                            UserId = "2",
+                            RoleId = "2"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
